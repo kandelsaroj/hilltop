@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\testimonials;
+use App\Models\gallery;
 use Illuminate\Http\Request;
 
-class TestimonialsController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class TestimonialsController extends Controller
      */
     public function index()
     {
-        $testimonials=testimonials::latest()->get();
-        return view('testimonial.index',compact('testimonials'));
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class TestimonialsController extends Controller
      */
     public function create()
     {
-        return view('testimonial.create');
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class TestimonialsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\testimonials  $testimonials
+     * @param  \App\Models\gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function show(testimonials $testimonials)
+    public function show(gallery $gallery)
     {
         //
     }
@@ -53,10 +52,10 @@ class TestimonialsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\testimonials  $testimonials
+     * @param  \App\Models\gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function edit(testimonials $testimonials)
+    public function edit(gallery $gallery)
     {
         //
     }
@@ -65,10 +64,10 @@ class TestimonialsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\testimonials  $testimonials
+     * @param  \App\Models\gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, testimonials $testimonials)
+    public function update(Request $request, gallery $gallery)
     {
         //
     }
@@ -76,10 +75,10 @@ class TestimonialsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\testimonials  $testimonials
+     * @param  \App\Models\gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(testimonials $testimonials)
+    public function destroy(gallery $gallery)
     {
         //
     }

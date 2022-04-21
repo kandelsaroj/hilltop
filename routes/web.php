@@ -41,6 +41,7 @@ Route::get('/retoreprojects/{id}', [FileController::class, 'deletePermanently'])
  Route::resource('ourspecial_catagory','App\Http\Controllers\OurspecialCategoryController');
  Route::resource('booking','App\Http\Controllers\BookingController');
  Route::resource('event','App\Http\Controllers\EventController');   
+ Route::resource('testimonial','App\Http\Controllers\TestimonialsController');   
 
  //frontend routes
 

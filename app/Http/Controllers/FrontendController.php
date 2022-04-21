@@ -9,6 +9,9 @@ use App\Models\menu;
 use App\Models\our_special;
 use App\Models\why_choose_us;
 use App\Models\menu_catagory;
+use App\Models\event;
+use App\Models\testimonials;
+
 
 class FrontendController extends Controller
 {
@@ -21,8 +24,10 @@ class FrontendController extends Controller
         $why_choose_us= why_choose_us::all();
         $our_special= our_special::all();
         $menu_category= menu_catagory::all();
+        $event= event::all();
+        $testimonial= testimonials::all();
 
-        return view('index', compact('about','slider','menu','why_choose_us','our_special','menu_category'));
+        return view('index', compact('about','slider','menu','why_choose_us','our_special','menu_category','event','testimonial'));
         
     }
     
