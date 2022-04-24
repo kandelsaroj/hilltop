@@ -29,7 +29,6 @@
                   <thead>
                   <tr>
                      <th>S.N.</th>
-                    
                     <th>name</th>
                     <th>image</th>
                     <th>ocupation<th>
@@ -40,7 +39,7 @@
                   </thead>
                   <tbody>
                       @if($testimonials)
-                      @foreach($testimonials as $slider)
+                      @foreach($testimonials as $testimonial)
 
                   <tr>
                   <tr>

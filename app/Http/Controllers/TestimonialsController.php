@@ -36,7 +36,15 @@ class TestimonialsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $testimonial = new testimonials;
+        $testimonial->name = $request->name;
+        $testimonial->image = $request->image;
+        $testimonial->ocupation = $request->ocupation;
+        $testimonial->content = $request->content;
+        
+        
+        $testimonial->save();
+        return redirect()->back();
     }
 
     /**
