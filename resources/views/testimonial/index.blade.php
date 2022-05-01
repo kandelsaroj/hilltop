@@ -11,28 +11,24 @@
   
    
               @section('title')
-             manage testimonials
+             manage testimonial
               @endsection
              
 
               <a href="{{route('testimonial.create')}}" class="btn btn-info btn-md" role="button">
-          <span class="glyphicon glyphicon-plus-sign"></span>Add testimonials
+          <span class="glyphicon glyphicon-plus-sign"></span>Add testimonial
         </a>
 
-              {{-- <a href="{{route('getDeleteProjects')}}" class="btn btn-danger btn-sm float-right" role="button">
-            recycle</i> --}}
-
-        </a>
-              <!-- /.card-header -->
+    
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                      <th>S.N.</th>
-                    <th>name</th>
-                    <th>image</th>
-                    <th>ocupation<th>
-                    <th>content<th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Ocupation</th>
+                    <th>Content</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -45,14 +41,14 @@
                   <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$testimonial->name}}</td>
-                                    <td>{{$testimonial->image}}</td>
+                                    <td><img src="{{asset('uploads\files')}}/{{$testimonial->image}}" alt="" style="display:block; object-fit: contain;" width="100%" height="120px"></td>
                                     <td>{{$testimonial->ocupation}}</td>
                                     <td>{{$testimonial->content}}</td>
                                     <td>
                                         @if($testimonial->status==1)
-                                        <p class="btn btn-primary btn-sm">Active</p>
+                                        <p class="btn btn-success btn-sm">Active</p>
                                         @else
-                                        <p class="btn btn-secondary btn-sm">Deactive</p>
+                                        <p class="btn btn-danger btn-sm">Deactive</p>
                                         @endif
                                     </td>
                                     <td>
@@ -60,16 +56,12 @@
                                     <form action="{{route('testimonial.destroy',$testimonial->id)}}" method="POST">
                                         @csrf
                                     @method('DELETE')
-                                    <div class="col-md-3">
+                                    <div class="container" style="display:flex;justify-content: flex-end">
+                                  
                                     
-                                    <button class="btn btn-danger btn-sm " type="submit" >delete </button>
-                                    </div>
-                                    <div class="col-md-3">
+                                    <button class="btn btn-danger btn-md" type="submit" > <i class="fa fa-trash" aria-hidden="true"></i> </button>
                                     
-                                    <button class="btn btn-info btn-sm " type="submit" >edit </button>
-                                    </div>
-                                    <div class="col-md-3">
-                                    
+                                    <button class="btn btn-info btn-md  ml-1" type="submit" ><i class="fa fa-edit"></i> </button>
                                      
                                     </div>
                                     

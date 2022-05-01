@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\slider;
+use App\Models\file;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
@@ -28,7 +29,8 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('slider.create');
+        $files =file::latest()->get();
+        return view('file.create', compact('files'));
     }
 
     /**

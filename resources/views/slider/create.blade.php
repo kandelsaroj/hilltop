@@ -63,10 +63,56 @@ create_slider
       Looks good!
     </div>
   </div>
+  <div class="col-md-3 form-group">
+    <label for="validationCustom01" class="form-label">Image</label>
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-success btn-md form-control" data-toggle="modal" data-target="#myModal">Browse Images</button>
+   
+    </div>
+  <!-- Modal -->
+  
+    
+  
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="#exampleModalLabel">Images</h5>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+          </div>
+          <div class="modal-body">
+            <div class="row">
+
+              <style>
+                [type=radio]:checked+img{
+                  outline: 2px solid blue;
+                }
+              </style>
+
+              @if($files)
+              @foreach($files as $file)
+                <label>
+                  <input type="radio" id="selectimage" name="img" value="{{$file->file_link}}" style="opacity: 0;" />
+                  <img class="card-img-top" src="{{asset('uploads\files')}}/{{$file->file_link}}" alt="" style="width:100%; height:110px; object-fit:contain">
+                </label>
+              @endforeach
+              @endif      
+        </div>
+     
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-primary" onclick="firstFunction()" data-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
   
   <div class="col-md-12 mt-3">
     <label for="validationCustomUsername" class="form-label">Image</label> 
-      <input type="text" class="form-control" name="img_link" required>
+      <input type="text" class="form-control" id="imgbox" name="img_link" required>
       
       <div class="invalid-feedback">
         Please choose a valid file.
@@ -84,6 +130,24 @@ create_slider
 <br>
 <br>
 <br>
+<script type="text/javascript">
+
+	// copy link of an image
+		function firstFunction() {
+			document.getElementById('imagebox').value = document.querySelector('input[name=img]:checked').value;
+		}
+	
+	// Opening Model again when next paginate is clicked in filemanager
+	  // var myParam = location.search.split('page=')[1]
+		// if(myParam)
+		// {
+		// 	window.addEventListener("load", function() {
+		// 	$("#exampleModal").modal("show");
+		// 	});
+		// }
+	</script>
+
+
 @endsection
 
 

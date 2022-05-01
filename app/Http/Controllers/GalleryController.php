@@ -14,7 +14,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        $gallerys=gallery::latest()->get();
+        return view('gallery.index',compact('gallerys'));
     }
 
     /**
@@ -24,7 +25,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('gallery.create');
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\testimonials;
+use App\Models\file;
 use Illuminate\Http\Request;
 
 class TestimonialsController extends Controller
@@ -25,7 +26,9 @@ class TestimonialsController extends Controller
      */
     public function create()
     {
-        return view('testimonial.create');
+        $files=file::all();
+        return view('testimonial.create',compact('files'));
+
     }
 
     /**
@@ -41,8 +44,6 @@ class TestimonialsController extends Controller
         $testimonial->image = $request->image;
         $testimonial->ocupation = $request->ocupation;
         $testimonial->content = $request->content;
-        
-        
         $testimonial->save();
         return redirect()->back();
     }

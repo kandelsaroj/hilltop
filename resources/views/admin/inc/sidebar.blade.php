@@ -24,6 +24,9 @@
       <li class="nav-item"><a href="{{route('testimonial.index')}}"><span class="menu-title" data-i18n="nav.dash.main"><i class="fa fa-address-book " aria-hidden="true"></i>Testimonial</span></a>
       </li>
       
+      <li class="nav-item"><a href="{{route('gallery.index')}}"><span class="menu-title" data-i18n="nav.dash.main"><i class="fa fa-address-book " aria-hidden="true"></i>gallery</span></a>
+      </li>
+      
 
      
        

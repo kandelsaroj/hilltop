@@ -16,12 +16,14 @@
   
   <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
   rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
 
   <!-- BEGIN VENDOR CSS-->
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/app-assets/css/vendors.css') }}">
   <!-- END VENDOR CSS-->
   <!-- BEGIN MODERN CSS-->
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/app-assets/css/app.css') }}">
+  
   <!-- END MODERN CSS-->
   <!-- BEGIN Page Level CSS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

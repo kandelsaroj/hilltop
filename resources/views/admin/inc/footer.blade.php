@@ -1,7 +1,7 @@
 <footer class="footer footer-static footer-light navbar-border navbar-shadow">
     <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
       <span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2020 <a class="text-bold-800 grey darken-2" href="https://www.xdezo.com"
-        target="_blank">XDezo Technologies </a>, All rights reserved. </span>
+        target="_blank">Saroj kandel</a>, All rights reserved. </span>
       <span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Version 1.0.0</span>
     </p>
   </footer>
