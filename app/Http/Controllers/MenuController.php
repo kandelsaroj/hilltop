@@ -15,7 +15,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menu =menu::latest()->get();
+        $menu =menu::paginate(3);;
         return view('menu.index',compact('menu'));
     }
 

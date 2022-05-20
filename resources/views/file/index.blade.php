@@ -16,11 +16,12 @@
              
 
               <a href="{{route('file.create')}}" class="btn btn-info btn-md" role="button">
-          <span class="glyphicon glyphicon-plus-sign"></span>ADD File
+          <i class="la la-add" >File</i>
         </a>
 
-              <a href="{{route('getDeleteProjects')}}" class="btn btn-danger btn-sm float-right" role="button">
-            recycle</i>
+              <a href="{{route('getDeleteProjects')}}" class="btn btn-danger btn-md float-right" role="button">
+                <i class="la la-refresh text-white "> </i>
+           
 
         </a>
               <!-- /.card-header -->
@@ -59,13 +60,13 @@
                                     <form action="{{route('file.destroy',$file->id)}}" method="POST">
                                         @csrf
                                     @method('DELETE')
-                                    <div class="col-md-3">
+                                    <div class="row-md-3" style="display: flex; justify-content:flex-end;"> 
                                     
-                                    <button class="btn btn-danger btn-sm " type="submit" >delete </button>
-                                    </div>
-                                    <div class="col-md-3">
+                                    <button class="btn btn-danger btn-sm mr-2" type="submit" >  <i class="la la-trash text-white "></i> </button>
+                                  
                                     
-                                    <button class="btn btn-info btn-sm " type="submit" >edit </button>
+                                    
+                                    <button class="btn btn-info btn-sm " type="submit" ><i class="la la-edit text-white "></i> </button>
                                     </div>
                                     
                   
@@ -78,6 +79,7 @@
                   @endforeach
                  @endif
                 </table>
+                {!! $files->links() !!}
               </div>
               
   

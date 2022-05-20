@@ -65,12 +65,13 @@ class TestimonialsController extends Controller
      * @param  \App\Models\testimonials  $testimonials
      * @return \Illuminate\Http\Response
      */
-    public function edit(testimonials $testimonials)
+    public function edit($id)
     {
-        //
+        $testimonial = testimonial::find($id);
+        return view('$testimonial.edit', compact('$testimonial'));
     }
 
-    /**
+    /**y
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

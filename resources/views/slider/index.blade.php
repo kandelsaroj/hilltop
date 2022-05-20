@@ -60,17 +60,17 @@
                                     <form action="{{route('slider.destroy',$slider->id)}}" method="POST">
                                         @csrf
                                     @method('DELETE')
-                                    <div class="col-md-3">
+                                    <div class="row-md-3" style="display: flex; justify-content:flex-end;"> 
                                     
-                                    <button class="btn btn-danger btn-sm " type="submit" >delete </button>
-                                    </div>
-                                    <div class="col-md-3">
+                                      <button class="btn btn-danger btn-sm " type="submit" >  <i class="la la-trash text-white "></i> </button>
                                     
-                                    <button class="btn btn-info btn-sm " type="submit" >edit </button>
-                                    </div>
-                                    <div class="col-md-3">
+                                      
+                                      
+                                      <button class="btn btn-info btn-sm  ml-1" type="submit" ><i class="la la-edit text-white "></i> </button>
                                     
-                                      <a href="{{route('slider.show',$slider->id)}}" name="submit" class="btn btn-info btn-sm float-left"><i class="la la-eye"></i></a>
+                                  
+                                    
+                                      <a href="{{route('slider.show',$slider->id)}}" name="submit" class="btn btn-info btn-sm float-left ml-1"><i class="la la-eye"></i></a>
                                     </div>
                                     
                   

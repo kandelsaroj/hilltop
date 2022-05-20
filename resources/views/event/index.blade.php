@@ -16,8 +16,8 @@
              
 
               <a href="{{route('event.create')}}" class="btn btn-info btn-md" role="button">
-          <span class="glyphicon glyphicon-plus-sign"></span>ADD event
-        </a>
+                <i class="la la-add" >event</i>
+              </a>
 
               {{-- <a href="{{route('getDeleteProjects')}}" class="btn btn-danger btn-sm float-right" role="button">
             recycle</i> --}}
@@ -61,15 +61,14 @@
                                     <form action="{{route('event.destroy',$event->id)}}" method="POST">
                                         @csrf
                                     @method('DELETE')
-                                    <div class="col-md-3">
+                                    <div class="row-md-3" style="display: flex; justify-content:flex-end;"> 
                                     
-                                    <button class="btn btn-danger btn-sm " type="submit" >delete </button>
-                                    </div>
-                                    <div class="col-md-3">
+                                      <button class="btn btn-danger btn-sm mr-2" type="submit" >  <i class="la la-trash text-white "></i> </button>
                                     
-                                    <button class="btn btn-info btn-sm " type="submit" >edit </button>
-                                    </div>
-                                   
+                                      
+                                      
+                                      <button class="btn btn-info btn-sm " type="submit" href="{{route('event.edit',$event->id)}}" ><i class="la la-edit text-white "></i> </button>
+                                      </div>
                   
             
                 </td>

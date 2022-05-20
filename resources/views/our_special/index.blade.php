@@ -62,14 +62,14 @@
                                     <form action="#" method="POST">
                                         @csrf
                                     @method('DELETE')
-                                    <div class="col-md-3">
+                                    <div class="row-md-3" style="display: flex; justify-content:flex-end;"> 
                                     
-                                    <button class="btn btn-danger btn-sm " type="submit" >delete </button>
-                                    </div>
-                                    <div class="col-md-3">
+                                      <button class="btn btn-danger btn-sm mr-2" type="submit" >  <i class="la la-trash text-white "></i> </button>
                                     
-                                    <button class="btn btn-info btn-sm " type="submit" >edit </button>
-                                    </div>
+                                      
+                                      
+                                      <button class="btn btn-info btn-sm " type="submit" ><i class="la la-edit text-white "></i> </button>
+                                      </div>
                                     <div class="col-md-3">
                                     
                                       <a href="#" name="submit" class="btn btn-info btn-sm float-left"><i class="la la-eye"></i></a>

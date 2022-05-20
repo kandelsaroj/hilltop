@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\why_choose_us;
+use App\Models\file;
 use Illuminate\Http\Request;
 
 class WhyChooseUsController extends Controller
@@ -25,7 +26,8 @@ class WhyChooseUsController extends Controller
      */
     public function create()
     {
-        return view('why_choose_us.create');  
+        $files=file::all();
+        return view('why_choose_us.create',compact('files'));
     }
 
     /**

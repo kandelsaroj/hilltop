@@ -14,7 +14,10 @@ class FileController extends Controller
      */
     public function index(Request $request)
     {
-        $files =file::latest()->get();
+        // $files =file::latest()->get();
+        // return view('file.index',compact('files'));
+
+        $files = file::paginate(3);
         return view('file.index',compact('files'));
     }
 
@@ -44,10 +47,11 @@ class FileController extends Controller
         $file = new File;
         $file->title = $request->title;
         $file->file_link = $finalname;
-        
+        $file->extension = $ext;
+
         $file->save();
 
-        return redirect('file')->with('message','File Uploaded Successfully.');
+        return redirect('file')->with('message','file Uploaded Successfully.');
     }
 
     /**
@@ -69,7 +73,8 @@ class FileController extends Controller
      */
     public function edit(file $file)
     {
-        //
+        $file=file::find($id);
+        return view('file.edit',compact('file'));
     }
 
     /**
@@ -79,10 +84,20 @@ class FileController extends Controller
      * @param  \App\Models\file  $file
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, file $file)
+    
+    
+        public function update(Request $request,$id)
     {
-        //
+        $file=file::find($id);
+        $file->htext=$request['htext'];
+        $file->title=$request['title'];
+        $file->ptext=$request['ptext'];
+  
+        $file->update();
+        return redirect()->route('file.index');
     }
+
+    
 
     /**
      * Remove the specified resource from storage.

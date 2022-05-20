@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\gallery;
+use App\Models\file;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -14,7 +15,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $gallerys=gallery::latest()->get();
+        $gallerys=gallery::paginate(3);;
         return view('gallery.index',compact('gallerys'));
     }
 
@@ -25,7 +26,9 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('gallery.create');
+        $files=file::all();
+        return view('gallery.create',compact('files'));
+       
     }
 
     /**
@@ -36,7 +39,13 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $galleries = new gallery;
+        $galleries->name = $request->name;
+        $galleries->image = $request->image;
+        $galleries->post = $request->post;
+        
+        $galleries->save();
+        return redirect()->back();
     }
 
     /**

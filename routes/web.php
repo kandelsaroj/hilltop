@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\FileController;
 
 
 /*
@@ -26,8 +27,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//file controller//
 Route::resource('file','App\Http\Controllers\FileController');
-Route::get('deletedprojects', [FileController::class, 'getDeleteProjects'])->name('getDeleteProjects');
+Route::get('/deletedprojects', [FileController::class, 'getDeleteProjects'])->name('getDeleteProjects');
 Route::get('/deletedprojects/{id}', [FileController::class, 'restoreDeletedProjects'])->name('restoreDeletedProjects');
 Route::get('/retoreprojects/{id}', [FileController::class, 'deletePermanently'])->name('deletePermanently');
 

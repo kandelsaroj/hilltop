@@ -14,7 +14,7 @@ class OurspecialCategoryController extends Controller
      */
     public function index()
     {
-        $specialcats =ourspecial_category::latest()->get();
+        $specialcats =ourspecial_category::paginate(3);;
         return view('ourspecial_category.index',compact('specialcats'));
     }
 

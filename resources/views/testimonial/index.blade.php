@@ -56,15 +56,14 @@
                                     <form action="{{route('testimonial.destroy',$testimonial->id)}}" method="POST">
                                         @csrf
                                     @method('DELETE')
-                                    <div class="container" style="display:flex;justify-content: flex-end">
-                                  
+                                    <div class="row-md-3" style="display: flex; justify-content:flex-end;"> 
                                     
-                                    <button class="btn btn-danger btn-md" type="submit" > <i class="fa fa-trash" aria-hidden="true"></i> </button>
+                                      <button class="btn btn-danger btn-sm mr-2" type="submit" >  <i class="la la-trash text-white "></i> </button>
                                     
-                                    <button class="btn btn-info btn-md  ml-1" type="submit" ><i class="fa fa-edit"></i> </button>
-                                     
-                                    </div>
-                                    
+                                      
+                                      
+                                      <button class="btn btn-info btn-sm" href="{{route('testimonial.edit',$testimonial->id)}}" type="submit" ><i class="la la-edit text-white "></i> </button>
+                                      </div>
                   
             
                 </td>

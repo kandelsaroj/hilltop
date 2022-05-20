@@ -14,7 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events =event::latest()->get();
+        $events =event::paginate(3);;
         return view('event.index',compact('events'));
     }
 
@@ -55,7 +55,7 @@ class EventController extends Controller
      */
     public function show(event $event)
     {
-        //
+       
     }
 
     /**
@@ -64,9 +64,10 @@ class EventController extends Controller
      * @param  \App\Models\event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(event $event)
+    public function edit($id)
     {
-        //
+        $event=event::find($id);
+        return view('event.edit',compact('event'));
     }
 
     /**
@@ -78,7 +79,14 @@ class EventController extends Controller
      */
     public function update(Request $request, event $event)
     {
-        //
+        $event=event::find($id);
+        $event->h1=$request['h1'];
+        $event->price=$request['price'];
+        $event->content=$request['content'];
+        $event->image=$request['image'];
+  
+        $event->update();
+        return redirect()->route('event.index');
     }
 
     /**

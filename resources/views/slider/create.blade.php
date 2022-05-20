@@ -110,16 +110,14 @@ create_slider
       </div>
     </div>
   
-  <div class="col-md-12 mt-3">
-    <label for="validationCustomUsername" class="form-label">Image</label> 
-      <input type="text" class="form-control" id="imgbox" name="img_link" required>
-      
-      <div class="invalid-feedback">
-        Please choose a valid file.
-      </div>
+  <div class="col-md-9 form-group">
+    <label for="validationCustom01" class="form-label">Image Link</label>
+    <input type="text" id="imagebox" class="form-control" name="img_link" require>
+    
+    <div class="valid-feedback">
+      Looks good!
     </div>
   </div>
-  
   <div class="col-12 mt-3">
     <button class="btn btn-primary " type="submit" style="margin-bottom: 50px">Submit</button>
   </div>

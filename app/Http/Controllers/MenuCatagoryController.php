@@ -14,7 +14,7 @@ class MenuCatagoryController extends Controller
      */
     public function index()
     {
-        $menucats =menu_catagory::latest()->get();
+        $menucats =menu_catagory::paginate(3);;
         return view('menu_catagory.index',compact('menucats'));
     }
 

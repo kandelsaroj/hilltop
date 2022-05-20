@@ -46,7 +46,7 @@
                                     <td>{{$about->comtent}}</td>
                                   
                                     
-                                    <td><img src="{{asset('uploads\files')}}/{{$about->img_link}}" alt="" style="display:block; object-fit: contain;" width="100%" height="120px"></td>
+                                    <td><img src="{{asset('uploads\files')}}/{{$about->img_link}}" alt="" style="display:block; object-fit: contain;" width="80%" ></td>
                                     <td>
                                         @if($about->status==1)
                                         <p class="btn btn-primary btn-sm">Active</p>
@@ -59,14 +59,16 @@
                                     <form action="{{route('about.destroy',$about->id)}}" method="POST">
                                         @csrf
                                     @method('DELETE')
-                                    <div class="col-md-3">
+                                    <div class="row-md-3" style="display: flex; justify-content:flex-end;"> 
                                     
-                                    <button class="btn btn-danger btn-sm " type="submit" >delete </button>
-                                    </div>
-                                    <div class="col-md-3">
+                                      <button class="btn btn-danger btn-sm mr-2" type="submit" >  <i class="la la-trash text-white "></i> </button>
                                     
-                                    <button class="btn btn-info btn-sm " type="submit" >edit </button>
-                                    </div>
+                                      
+                                      
+                                      <button class="btn btn-info btn-sm " type="submit" herf="" ><i class="la la-edit text-white "></i> </button>
+                                      </div>
+                                      
+                    
                                     
                   
             

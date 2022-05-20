@@ -30,7 +30,7 @@ class SliderController extends Controller
     public function create()
     {
         $files =file::latest()->get();
-        return view('file.create', compact('files'));
+        return view('slider.create', compact('files'));
     }
 
     /**

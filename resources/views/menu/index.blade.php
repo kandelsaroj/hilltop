@@ -43,7 +43,7 @@
                       @foreach($menu as $menus)
 
                   <tr>
-                  <tr>
+                <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$menus->category()->first()->name}}</td>
                                     <td>{{$menus->fname}}</td>

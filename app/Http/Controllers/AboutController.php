@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\about;
+use App\Models\file;
 use Illuminate\Http\Request;
 
 
@@ -15,7 +16,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $abouts =about::latest()->get();
+        $abouts =about::paginate(3);;
         return view('about.index',compact('abouts'));
        
     }
@@ -27,7 +28,8 @@ class AboutController extends Controller
      */
     public function create()
     {
-        return view('about.create');    
+        $files=file::all();
+        return view('about.create',compact('files'));
     }
 
     /**
